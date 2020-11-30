@@ -31,6 +31,7 @@ def get_ulogin_by_uid(user_id):
 def get_udata_by_ulogin(login, session):
 
     print(login)
+    
     # set of regexps
     regex_for_extracting_json = r'{.+}'
 
@@ -52,13 +53,26 @@ def get_udata_by_ulogin(login, session):
 
         clean_json_with_info = re.search(regex_for_extracting_json, dirty_json_with_info).group(0)
 
-
-        full_name = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['full_name']
-        num_of_subscribers = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['edge_followed_by']['count']
-        follow = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['edge_follow']['count']
-        posted_media = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['count']
-        external_url = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['external_url']
-
+        try:
+            full_name = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['full_name']
+        except:
+            full_name = None
+        try:
+            num_of_subscribers = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['edge_followed_by']['count']
+        except:
+            num_of_subscribers = None
+        try:
+            follow = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['edge_follow']['count']
+        except:
+            follow = None
+        try:
+            posted_media = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['count']
+        except:
+            posted_media = None
+        try:
+            external_url = loads(clean_json_with_info)['entry_data']['ProfilePage'][0]['graphql']['user']['external_url']
+        except:
+            external_url = None
         result =  {
                 'логин':login,
                 'название_или_имя_профиля':full_name,
