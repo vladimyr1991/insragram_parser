@@ -1,0 +1,58 @@
+<html>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Inputed files</th>
+        </tr>
+        {% for f in uploads %}
+        <tr>
+            <td><a href="download_inputed_file/{{f}}">{{ f }}</a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td><a></a></td>
+        </tr>
+        
+    </table>
+
+    <table>
+        <tr>
+            <th>Processed files</th>
+        </tr>
+        {% for f in processed_files %}
+        <tr>
+            <td><a href="download_processed_file/{{f}}">{{ f }}</a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td><a></a></td>
+        </tr>
+    </table>
+    <br>
+    <form action="uploader" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" />
+    </form>
+
+    <h5 style="color:red;">WARNING! Only .txt files accepted.</h2>
+</body>
+
+</html>
