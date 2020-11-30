@@ -13,7 +13,7 @@
 - склонируйте репозиторий
 
 ```sh
-$ git clone https://github.com/vladimyr1991/insragram_parser.git
+$ git clone https://github.com/vladimyr1991/instagram_parser.git
 ```
 - установите docker-compose
 ```sh
