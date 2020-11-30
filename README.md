@@ -13,11 +13,11 @@
 - склонируйте репозиторий
 
 ```sh
-$ git clone https://github.com/vladimyr1991/insragram_parser.git
+git clone https://github.com/vladimyr1991/insragram_parser.git
 ```
 - установите docker-compose
 ```sh
-$ https://docs.docker.com/compose/install/
+https://docs.docker.com/compose/install/
 ```
 - перейдите в консоли в папку с программой
 - выполните команду
