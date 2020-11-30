@@ -81,9 +81,10 @@ def get_udata_by_ulogin(login, session):
 
 def make_data_frame_with_meta_from_list_of_logins(list_of_logins):
 
-
-    USERNAME = 'petrivanov5493'
-    PASSWORD = 'pmeltO59'
+    with open('./credentials.json') as f:
+        credentials = loads(f.read())
+    USERNAME = credentials['username']
+    PASSWORD = credentials['password']
 
     link = 'https://www.instagram.com/accounts/login/'
     login_url = 'https://www.instagram.com/accounts/login/ajax/'
