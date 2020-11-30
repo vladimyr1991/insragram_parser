@@ -11,7 +11,6 @@
 # Установка
 
 - склонируйте репозиторий
-
 ```sh
 $ git clone https://github.com/vladimyr1991/instagram_parser.git
 ```
