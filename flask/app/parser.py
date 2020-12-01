@@ -152,8 +152,8 @@ def make_data_frame_with_meta_from_list_of_logins(list_of_logins):
             parsed_results['ссылка'].append(u_data['ссылка'])
 
             # перерывы между парсингом
-            var_for_sleep_time = randrange(5, 15, 2)
-            time.sleep(var_for_sleep_time)
+            # var_for_sleep_time = randrange(5, 15, 2)
+            # time.sleep(var_for_sleep_time)
 
         parsed_results = pd.DataFrame(parsed_results)
 
